@@ -8,8 +8,8 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
-// IMPORTANT: Replace this with your actual API key
-const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY 
+// Use Vercel's built-in handling for environment variables
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 
 export default function WizardChatbot() {
   const [input, setInput] = useState('')
@@ -21,6 +21,9 @@ export default function WizardChatbot() {
   useEffect(() => {
     const initializeChat = async () => {
       try {
+        if (!GEMINI_API_KEY) {
+          throw new Error("GEMINI_API_KEY is not defined");
+        }
         const genAI = new GoogleGenerativeAI(GEMINI_API_KEY)
         const model = genAI.getGenerativeModel({ 
           model: "gemini-1.5-flash",
@@ -43,6 +46,7 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
         setChatSession(newChatSession)
       } catch (err) {
         setError('Failed to initialize chat session. Please check the API key.')
+        console.error('Initialization error:', err)
       }
     }
 
@@ -62,6 +66,7 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
       setMessages(prev => [...prev, { role: 'assistant', content: responseText }])
     } catch (err) {
       setError('Failed to get response from the wizard. Please try again.')
+      console.error('Send message error:', err)
     } finally {
       setIsLoading(false)
       setInput('')
