@@ -9,7 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
 // IMPORTANT: Replace this with your actual API key
-const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || 'AIzaSyDERyKbxN9Da7eMfkO0zw3b4-qCH715h24'
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY 
 
 export default function WizardChatbot() {
   const [input, setInput] = useState('')
