@@ -27,7 +27,7 @@ yarn-error.log*
 
 # local env files
 .env
-NEXT_PUBLIC_GEMINI_API_KEY = AIzaSyDERyKbxN9Da7eMfkO0zw3b4-qCH715h24
+
 # vercel
 .vercel
 
