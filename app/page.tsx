@@ -1,22 +1,21 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import { GoogleGenerativeAI, ChatSession } from '@google/generative-ai'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
-// Use Vercel's built-in handling for environment variables
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 
 export default function WizardChatbot() {
   const [input, setInput] = useState('')
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState<Array<{ role: string; content: string }>>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-  const [chatSession, setChatSession] = useState(null)
+  const [chatSession, setChatSession] = useState<ChatSession | null>(null)
 
   useEffect(() => {
     const initializeChat = async () => {
@@ -53,7 +52,7 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
     initializeChat()
   }, [])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!input.trim() || !chatSession) return
 
