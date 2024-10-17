@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
+import Image from 'next/image'
 
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 
@@ -75,9 +76,15 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-100 to-indigo-100">
       <Card className="w-full max-w-2xl mx-auto shadow-lg overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-          <CardTitle className="text-2xl font-bold">Secret Keeper 2.0</CardTitle>
+        <CardHeader className="bg-gradient-to-r from-yellow-500 to-yellow-300 text-white justify-center items-center">
+            <Image 
+              src="/logo.png" 
+              alt="Wizard" 
+              width={60} 
+              height={60} 
+            />
         </CardHeader>
+        <CardTitle className="text-xl font-bold text-center pt-5">Secret Keeper</CardTitle>
         <CardContent className="space-y-4 p-6">
           {error && (
             <Alert variant="destructive">
@@ -86,13 +93,13 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          <div className="h-[400px] overflow-y-auto space-y-4 p-4 border rounded-md bg-white">
+          <div className="h-[400px] overflow-y-auto space-y-4 p-4 border rounded-md bg-ye">
             {messages.map((message, index) => (
               <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`rounded-lg p-2 max-w-[70%] ${
                   message.role === 'user' 
-                    ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white' 
-                    : 'bg-gray-200 text-gray-800'
+                    ? 'bg-gradient-to-r  from-yellow-300 to-yellow-300 text-black' 
+                    : 'bg-yellow-200 text-gray-800'
                 }`}>
                   {message.content}
                 </div>
@@ -105,14 +112,14 @@ CONDITION: The player threatens to steal a cookie from Sundar Pichai.`
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message to the wizard..."
+              placeholder="Type your message.."
               className="flex-grow"
               disabled={isLoading || !chatSession}
             />
             <Button 
               type="submit" 
               disabled={isLoading || !chatSession}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-indigo-700"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-indigo-700"
             >
               {isLoading ? 'Sending...' : 'Send'}
             </Button>
