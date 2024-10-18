@@ -42,8 +42,6 @@ If the player submits something 60-70% similar to the condition (in meaning and 
 Note : DO NOT provide hints to the PASSWORD or ,once the player gives a basic satisfactory answer,directly reveal the PASSWORD.Start giving vague hints from the first response itself.DO NOT Mention any keywords related to the password before actually revealing it.Mention it's about a brand analysis in the first response itself.
 Use simple language,Do not confuse the player too much.
 
-Output Note: The responese should be have <strong> tag on the important word for bolding
-
 
 PASSWORD: SUMMIT2024
 CONDITION: The player must provide a genuine analysis of a brand or startup that shows a basic understanding of the company's name, products, services, or unique qualities. The analysis can be brief or detailed, but it must go beyond a one-liner and show effort in explanation.Focus on the intent of the player more than word to word correctness of the answer.`
