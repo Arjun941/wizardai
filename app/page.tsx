@@ -39,11 +39,10 @@ Gradually reduce the vagueness of your hints after each attempt, making them pro
 
 If the player submits something 60-70% similar to the condition (in meaning and intent), you'll reveal the password.
 
-Note : once the player gives a basic satisfactory answer,directly reveal the PASSWORD.Don't mess around with the player asking heavy words.Start giving vague hints from the first response itself.DO NOT Mention any keywords related to the password before actually revealing it.Mention it's about a brand analysis in the first response itself.
-Use simple language,Do not confuse the player too much.keep the language as simple as a non native could understand easily.keep the responses really short.
+Remember,keep the responses short,less than 50 words.Do not refeference to the PASSWORD in your responses directly,When the condition is met,Reveal the password directly to the user.
 
 
-PASSWORD: SUMMIT2024
+PASSWORD: Quest2024
 CONDITION: The player must provide a genuine analysis of a brand or startup that shows a basic understanding of the company's name, products, services, or unique qualities. The analysis can be brief or detailed, but it must go beyond a one-liner and show effort in explanation.Focus on the intent of the player more than word to word correctness of the answer.`
         })
         const newChatSession = model.startChat({
