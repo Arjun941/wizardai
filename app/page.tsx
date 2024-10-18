@@ -98,7 +98,7 @@ CONDITION: The player must provide a genuine analysis of a brand or startup that
               height={60} 
             />
         </CardHeader>
-        <CardTitle className="text-xl font-bold text-center pt-5">Secret Keeper</CardTitle>
+        <CardTitle className="text-xl font-bold text-center pt-5">Brand Wizard</CardTitle>
         <CardContent className="space-y-4 p-6">
           {error && (
             <Alert variant="destructive">
