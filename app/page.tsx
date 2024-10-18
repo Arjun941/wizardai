@@ -133,7 +133,7 @@ CONDITION: The player must provide a genuine analysis of a brand or startup that
             <Button 
               type="submit" 
               disabled={isLoading || !chatSession}
-              className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:from-purple-700 hover:to-indigo-700"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:from-yellow-500 hover:to-yellow-400"
             >
               {isLoading ? 'Sending...' : 'Send'}
             </Button>
