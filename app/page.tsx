@@ -45,7 +45,7 @@ Reference the first line of CONDITION In your initial response.
 
 
 
-PASSWORD: Quest2024
+PASSWORD: Quest2024 
 CONDITION: The player must provide a genuine analysis of a brand or startup that shows a basic understanding of the company's name, products, services, or unique qualities. The analysis can be brief or detailed, but it must go beyond a one-liner and show effort in explanation.Focus on the intent of the player more than word to word correctness of the answer.`
         })
         const newChatSession = model.startChat({
